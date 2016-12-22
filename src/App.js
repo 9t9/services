@@ -36,3 +36,13 @@ export default class App {
     return `/app/${this.slug}`;
   }
 }
+
+// export function withApp(Component) {
+
+//   // const app = app();
+
+//   const WithAppComponent = (props) => (<Component app={app} {...props} />);
+
+//   return WithAppComponent;
+// }
+
