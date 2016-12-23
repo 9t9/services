@@ -6,44 +6,52 @@ import {
 	UNDOCK_SYSTEM_NAV
 } from './actions'
 
-const initialState = {
-  bluerainSystemNavIsOpen: false,
-  bluerainSystemNavIsDocked: false
-}
+import initialState from '../InitialState';
 
 export default function systemNav(state = initialState, action) {
+  
+  let obj;
+
+  console.log('in reducer state', state)
+  console.log('in reducer action', action)
   switch (action.type) {
 
 		// Open/Close
     case OPEN_SYSTEM_NAV:
-      return Object.assign({}, state, {
-        bluerainSystemNavIsOpen: true
-      })
+      obj = Object.assign({}, state);
+      state.systemNav.state.open = true;
+      return obj;
+
     case CLOSE_SYSTEM_NAV:
-      return Object.assign({}, state, {
-        bluerainSystemNavIsOpen: false
-      })
+      obj = Object.assign({}, state);
+      state.systemNav.state.open = false;
+      return obj;
+
     case TOGGLE_SYSTEM_NAV:
 			var open;
-			if (state.bluerainSystemNavIsOpen === true) {
+			if (state.systemNav.state.open === true) {
 				open = false;
 			} else {
 				open = true;
 			}
-			
-      return Object.assign({}, state, {
-        bluerainSystemNavIsOpen: open
-      })
+
+      obj = Object.assign({}, state);
+      state.systemNav.state.open = open;
+      return obj;
 
 		// Docking
     case DOCK_SYSTEM_NAV:
-      return Object.assign({}, state, {
-        bluerainSystemNavIsDocked: true
-      })
+
+      obj = Object.assign({}, state);
+      state.systemNav.state.docked = true;
+      return obj;
+
     case UNDOCK_SYSTEM_NAV:
-      return Object.assign({}, state, {
-        bluerainSystemNavIsDocked: false
-      })   
+
+      obj = Object.assign({}, state);
+      state.systemNav.state.docked = false;
+      return obj;
+      
     default:
       return state
   }
