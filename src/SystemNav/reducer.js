@@ -12,8 +12,6 @@ export default function systemNav(state = initialState, action) {
   
   let obj;
 
-  console.log('in reducer state', state)
-  console.log('in reducer action', action)
   switch (action.type) {
 
 		// Open/Close
