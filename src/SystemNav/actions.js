@@ -14,21 +14,21 @@ export const UNDOCK_SYSTEM_NAV = 'UNDOCK_SYSTEM_NAV';
  */
 
 export function openSystemNav() {
-  return { type: OPEN_SYSTEM_NAV }
+  return { type: OPEN_SYSTEM_NAV };
 }
 
 export function closeSystemNav() {
-  return { type: CLOSE_SYSTEM_NAV }
+  return { type: CLOSE_SYSTEM_NAV };
 }
 
 export function toggleSystemNav() {
-  return { type: TOGGLE_SYSTEM_NAV }
+  return { type: TOGGLE_SYSTEM_NAV };
 }
 
 export function dockSystemNav() {
-  return { type: DOCK_SYSTEM_NAV }
+  return { type: DOCK_SYSTEM_NAV };
 }
 
 export function undockSystemNav() {
-  return { type: UNDOCK_SYSTEM_NAV }
+  return { type: UNDOCK_SYSTEM_NAV };
 }

@@ -1,6 +1,10 @@
 import App from './App';
 
 import withSystemNav from './SystemNav/withSystemNav';
-import systemNavReducer from './SystemNav/reducer';
+import reducers from './reducers';
 
-export  {App, withSystemNav, systemNavReducer };
+export {
+	App,
+	withSystemNav,
+	reducers
+};

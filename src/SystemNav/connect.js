@@ -1,28 +1,27 @@
-import { 
-	openSystemNav,
-	closeSystemNav,
-	toggleSystemNav,
-	dockSystemNav,
-	undockSystemNav
-} from './actions'
+import {
+  openSystemNav,
+  closeSystemNav,
+  toggleSystemNav,
+  dockSystemNav,
+  undockSystemNav
+} from './actions';
 
-export const mapStateToProps = (state) => {
-  return {
-    bluerain: state.bluerain
-  }
-}
+export const mapStateToProps = state => ({
+  systemNav: state.bluerain.systemNav
+});
 
 export const mapDispatchToProps = (dispatch, ownProps) => {
 
-	const bluerain = ownProps.bluerain;
-	
-	bluerain.systemNav.actions.open = () => dispatch(openSystemNav());
-	bluerain.systemNav.actions.close = () => dispatch(closeSystemNav());
-	bluerain.systemNav.actions.toggle = () => dispatch(toggleSystemNav());
-	bluerain.systemNav.actions.dock = () => dispatch(dockSystemNav());
-	bluerain.systemNav.actions.undock = () => dispatch(undockSystemNav());
-	
+  const systemNav = ownProps.systemNav;
+  systemNav.actions = {};
+
+  systemNav.actions.open = () => dispatch(openSystemNav());
+  systemNav.actions.close = () => dispatch(closeSystemNav());
+  systemNav.actions.toggle = () => dispatch(toggleSystemNav());
+  systemNav.actions.dock = () => dispatch(dockSystemNav());
+  systemNav.actions.undock = () => dispatch(undockSystemNav());
+
   return {
-    bluerain
-  }
-}
+    systemNav
+  };
+};
