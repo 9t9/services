@@ -1,20 +1,20 @@
-import { 
+import {
   OPEN_SYSTEM_NAV,
-	CLOSE_SYSTEM_NAV,
-	TOGGLE_SYSTEM_NAV,
-	DOCK_SYSTEM_NAV,
-	UNDOCK_SYSTEM_NAV
-} from './actions'
+  CLOSE_SYSTEM_NAV,
+  TOGGLE_SYSTEM_NAV,
+  DOCK_SYSTEM_NAV,
+  UNDOCK_SYSTEM_NAV
+} from './actions';
 
 import initialState from '../InitialState';
 
 export default function systemNav(state = initialState, action) {
-  
+
   let obj;
 
   switch (action.type) {
 
-		// Open/Close
+	  // Open/Close
     case OPEN_SYSTEM_NAV:
       obj = Object.assign({}, state);
       state.systemNav.state.open = true;
@@ -26,18 +26,15 @@ export default function systemNav(state = initialState, action) {
       return obj;
 
     case TOGGLE_SYSTEM_NAV:
-			var open;
-			if (state.systemNav.state.open === true) {
-				open = false;
-			} else {
-				open = true;
-			}
+      let open = true;
+      if (state.systemNav.state.open === true) {
+        open = false;
+      }
 
-      obj = Object.assign({}, state);
       state.systemNav.state.open = open;
       return obj;
 
-		// Docking
+    // Docking
     case DOCK_SYSTEM_NAV:
 
       obj = Object.assign({}, state);
@@ -49,8 +46,8 @@ export default function systemNav(state = initialState, action) {
       obj = Object.assign({}, state);
       state.systemNav.state.docked = false;
       return obj;
-      
+
     default:
-      return state
+      return state;
   }
 }
