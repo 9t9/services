@@ -7,20 +7,21 @@ import {
 } from './actions';
 
 export const mapStateToProps = state => ({
-  bluerain: state.bluerain
+  systemNav: state.bluerain.systemNav
 });
 
 export const mapDispatchToProps = (dispatch, ownProps) => {
 
-  const bluerain = ownProps.bluerain;
+  const systemNav = ownProps.systemNav;
+  systemNav.actions = {};
 
-  bluerain.systemNav.actions.open = () => dispatch(openSystemNav());
-  bluerain.systemNav.actions.close = () => dispatch(closeSystemNav());
-  bluerain.systemNav.actions.toggle = () => dispatch(toggleSystemNav());
-  bluerain.systemNav.actions.dock = () => dispatch(dockSystemNav());
-  bluerain.systemNav.actions.undock = () => dispatch(undockSystemNav());
+  systemNav.actions.open = () => dispatch(openSystemNav());
+  systemNav.actions.close = () => dispatch(closeSystemNav());
+  systemNav.actions.toggle = () => dispatch(toggleSystemNav());
+  systemNav.actions.dock = () => dispatch(dockSystemNav());
+  systemNav.actions.undock = () => dispatch(undockSystemNav());
 
   return {
-    bluerain
+    systemNav
   };
 };

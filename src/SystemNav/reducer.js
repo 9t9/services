@@ -6,7 +6,7 @@ import {
   UNDOCK_SYSTEM_NAV
 } from './actions';
 
-import initialState from '../InitialState';
+import initialState from './InitialState';
 
 export default function systemNav(state = initialState, action) {
 
@@ -17,34 +17,35 @@ export default function systemNav(state = initialState, action) {
 	  // Open/Close
     case OPEN_SYSTEM_NAV:
       obj = Object.assign({}, state);
-      state.systemNav.state.open = true;
+      state.state.open = true;
       return obj;
 
     case CLOSE_SYSTEM_NAV:
       obj = Object.assign({}, state);
-      state.systemNav.state.open = false;
+      state.state.open = false;
       return obj;
 
     case TOGGLE_SYSTEM_NAV:
       let open = true;
-      if (state.systemNav.state.open === true) {
+      if (state.state.open === true) {
         open = false;
       }
 
-      state.systemNav.state.open = open;
+      obj = Object.assign({}, state);      
+      obj.state.open = open;
       return obj;
 
     // Docking
     case DOCK_SYSTEM_NAV:
 
       obj = Object.assign({}, state);
-      state.systemNav.state.docked = true;
+      state.state.docked = true;
       return obj;
 
     case UNDOCK_SYSTEM_NAV:
 
       obj = Object.assign({}, state);
-      state.systemNav.state.docked = false;
+      state.state.docked = false;
       return obj;
 
     default:
