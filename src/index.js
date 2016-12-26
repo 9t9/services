@@ -6,5 +6,5 @@ import reducers from './reducers';
 export {
 	App,
 	withSystemNav,
-	reducers
+	reducers,
 };
