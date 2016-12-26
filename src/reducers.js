@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import {reducer as notificationsReducer} from 'reapop';
+import { reducer as notificationsReducer } from 'reapop';
 
 import systemNavReducer from './SystemNav/reducer';
 

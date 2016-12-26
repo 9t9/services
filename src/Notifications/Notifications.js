@@ -3,15 +3,10 @@ import { connect } from 'react-redux';
 import { NotificationsSystem } from 'reapop/lib/components/NotificationsSystem';
 import theme from './theme';
 
-const NotificationsSystemWithConnect = connect((state) => {
-    console.log('mapping', state)
-  return {
-    notifications: state.bluerain.notifications
-  };
-})(NotificationsSystem);
+const NotificationsSystemWithConnect = connect(state => ({
+  notifications: state.bluerain.notifications
+}))(NotificationsSystem);
 
-const Notifications = (props) => {
-    return (<NotificationsSystemWithConnect theme={theme} />)
-};
+const Notifications = props => (<NotificationsSystemWithConnect theme={theme} />);
 
 export default Notifications;
