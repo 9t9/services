@@ -8,14 +8,4 @@ export default function withNotifications(Component) {
 		updateNotification,
 		removeNotification
 	})(Component);
-	// return connect((state) => {
-	// 	console.log('map state', state)
-	// 	return {};
-	// }, (dispatch, ownProps) => {
-	// 	console.log('here')
-	// 	return {
-	// 		notify
-	// 	}
-	// })(Component);
 }
-
