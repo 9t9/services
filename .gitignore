@@ -45,6 +45,8 @@ jspm_packages
 *.tgz
 
 
+#build
+lib
 
 dist
 .idea
