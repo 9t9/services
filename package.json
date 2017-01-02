@@ -8,9 +8,7 @@
     "test": "npm test",
     "storybook": "start-storybook -p 6016",
     "build-storybook": "build-storybook",
-    "build": "rm -rf lib && npm run build-js",
-    "build-js": "babel src --out-dir lib",
-    "build-css": "node-sass src/Notifications/theme/styles.scss -o lib/Notifications/theme/",
+    "build": "rm -rf lib && babel src --out-dir lib",
     "postinstall": "npm run build"
   },
   "author": {

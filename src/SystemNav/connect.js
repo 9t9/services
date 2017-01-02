@@ -1,4 +1,6 @@
 import {
+  enableSystemNav,
+  disableSystemNav,
   openSystemNav,
   closeSystemNav,
   toggleSystemNav,
@@ -15,6 +17,8 @@ export const mapDispatchToProps = (dispatch, ownProps) => {
   const systemNav = ownProps.systemNav;
   systemNav.actions = {};
 
+  systemNav.actions.enable = () => dispatch(enableSystemNav());
+  systemNav.actions.disable = () => dispatch(disableSystemNav());
   systemNav.actions.open = () => dispatch(openSystemNav());
   systemNav.actions.close = () => dispatch(closeSystemNav());
   systemNav.actions.toggle = () => dispatch(toggleSystemNav());

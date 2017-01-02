@@ -1,4 +1,6 @@
 import {
+  ENABLE_SYSTEM_NAV,
+  DISABLE_SYSTEM_NAV,
   OPEN_SYSTEM_NAV,
   CLOSE_SYSTEM_NAV,
   TOGGLE_SYSTEM_NAV,
@@ -13,6 +15,17 @@ export default function systemNav(state = initialState, action) {
   let obj;
 
   switch (action.type) {
+
+	  // Activate/Deactivate
+    case ENABLE_SYSTEM_NAV:
+      obj = Object.assign({}, state);
+      state.state.disabled = false;
+      return obj;
+
+    case DISABLE_SYSTEM_NAV:
+      obj = Object.assign({}, state);
+      state.state.disabled = true;
+      return obj;
 
 	  // Open/Close
     case OPEN_SYSTEM_NAV:
@@ -31,7 +44,7 @@ export default function systemNav(state = initialState, action) {
         open = false;
       }
 
-      obj = Object.assign({}, state);      
+      obj = Object.assign({}, state);
       obj.state.open = open;
       return obj;
 
