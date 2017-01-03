@@ -23,7 +23,7 @@ export default class App {
     this.slug = kebabCase(opts.slug);
 
     this.description = opts.description;
-    this.icon = opts.icon;
+    this.icons = opts.icons;
     this.version = opts.version;
 
     if (opts.routes) {
