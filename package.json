@@ -1,6 +1,6 @@
 {
   "name": "bluerain-client-services",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Client Services for BlueRain Client",
   "main": "index.js",
   "scripts": {
