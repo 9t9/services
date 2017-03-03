@@ -2,13 +2,15 @@
   "name": "bluerain-client-services",
   "version": "0.2.0",
   "description": "Client Services for BlueRain Client",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "start": "babel-node dev/server.js",
-    "test": "npm test",
+    "start": "npm run storybook",
     "storybook": "start-storybook -p 6016",
     "build-storybook": "build-storybook",
-    "build": "rm -rf lib && babel src --out-dir lib"
+    "build:clean": "del \"dist/!(.git*|Procfile)**\"",
+    "prebuild": "npm run build:clean",
+    "build": "cross-env NODE_ENV=production webpack",
+    "postinstall": "npm run build"
   },
   "author": {
     "name": "Abdul Rehman Talat",
@@ -57,6 +59,7 @@
     "storybook-host": "^1.0.8"
   },
   "dependencies": {
+    "bluerain-bootstrap-theme": "git+ssh://git@bitbucket.org/be-iot-platform/bluerain-bootstrap-theme.git#develop",
     "lodash.kebabcase": "^4.1.1",
     "react": "^15.4.1",
     "react-addons-css-transition-group": "^15.4.1",
