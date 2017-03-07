@@ -20,7 +20,7 @@ export default class App {
     }
 
     this.slug = kebabCase(opts.slug);
-
+    this.category = opts.category;
     this.description = opts.description;
     this.icons = opts.icons;
     this.version = opts.version;

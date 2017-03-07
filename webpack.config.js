@@ -29,7 +29,7 @@ const config = {
 
 if (!DEBUG) {
   config.plugins = config.plugins.concat([
-    new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } })
+    // new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } })
   ]);
 }
 
