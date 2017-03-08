@@ -3,7 +3,7 @@ import reducers from './reducers';
 import App from './App';
 import withNotifications from './Notifications/withNotifications';
 
-export default {
+export {
   App,
   withSystemNav,
   reducers,

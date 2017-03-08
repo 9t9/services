@@ -3,6 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.withNotifications = exports.reducers = exports.withSystemNav = exports.App = undefined;
 
 var _withSystemNav = require('./SystemNav/withSystemNav');
 
@@ -22,9 +23,7 @@ var _withNotifications2 = _interopRequireDefault(_withNotifications);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.default = {
-  App: _App2.default,
-  withSystemNav: _withSystemNav2.default,
-  reducers: _reducers2.default,
-  withNotifications: _withNotifications2.default
-};
+exports.App = _App2.default;
+exports.withSystemNav = _withSystemNav2.default;
+exports.reducers = _reducers2.default;
+exports.withNotifications = _withNotifications2.default;
