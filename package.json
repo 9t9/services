@@ -9,7 +9,8 @@
     "build-storybook": "build-storybook",
     "build:clean": "del \"dist/!(.git*|Procfile)**\"",
     "prebuild": "npm run build:clean",
-    "build": "cross-env NODE_ENV=production webpack"
+    "build": "cross-env NODE_ENV=production webpack",
+    "build:babel": "npm run build:clean && babel src --out-dir dist"
   },
   "author": {
     "name": "Abdul Rehman Talat",

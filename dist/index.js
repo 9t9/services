@@ -1,66 +1,30 @@
-/******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
+'use strict';
 
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId])
-/******/ 			return installedModules[moduleId].exports;
+var _withSystemNav = require('./SystemNav/withSystemNav');
 
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			exports: {},
-/******/ 			id: moduleId,
-/******/ 			loaded: false
-/******/ 		};
+var _withSystemNav2 = _interopRequireDefault(_withSystemNav);
 
-/******/ 		// Execute the module function
-/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+var _reducers = require('./reducers');
 
-/******/ 		// Flag the module as loaded
-/******/ 		module.loaded = true;
+var _reducers2 = _interopRequireDefault(_reducers);
 
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
+var _App = require('./App');
 
+var _App2 = _interopRequireDefault(_App);
 
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = modules;
+var _withNotifications = require('./Notifications/withNotifications');
 
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = installedModules;
+var _withNotifications2 = _interopRequireDefault(_withNotifications);
 
-/******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(0);
-/******/ })
-/************************************************************************/
-/******/ ([
-/* 0 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(1);
-
-
-/***/ },
-/* 1 */
-/***/ function(module, exports) {
-
-	import withSystemNav from './SystemNav/withSystemNav';
-	import reducers from './reducers';
-	import App from './App';
-
-	export default {
-	  App,
-	  withSystemNav,
-	  reducers,
-	};
-
-
-/***/ }
-/******/ ]);
+exports.default = {
+  App: _App2.default,
+  withSystemNav: _withSystemNav2.default,
+  reducers: _reducers2.default,
+  withNotifications: _withNotifications2.default
+};
