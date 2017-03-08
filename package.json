@@ -9,8 +9,7 @@
     "build-storybook": "build-storybook",
     "build:clean": "del \"dist/!(.git*|Procfile)**\"",
     "prebuild": "npm run build:clean",
-    "build": "cross-env NODE_ENV=production webpack",
-    "postinstall": "npm run build"
+    "build": "cross-env NODE_ENV=production webpack"
   },
   "author": {
     "name": "Abdul Rehman Talat",
@@ -63,7 +62,6 @@
     "storybook-host": "^1.0.8"
   },
   "dependencies": {
-    "bluerain-bootstrap-theme": "git+ssh://git@bitbucket.org/be-iot-platform/bluerain-bootstrap-theme.git#develop",
     "lodash.kebabcase": "^4.1.1",
     "react": "^15.4.1",
     "react-addons-css-transition-group": "^15.4.1",
