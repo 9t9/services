@@ -1,9 +1,14 @@
 module.exports = {
     module: {
         loaders: [
+            { test: /\.css$/, loader: 'style-loader!css-loader' },
             {
-                test: /\.(css|scss)$/,
-                loaders: ['style', 'css', 'sass'],
+                test: /\.scss$/,
+                loaders: [
+                    { loader: 'style-loader' },
+                    { loader: 'css-loader', options: { sourceMap: true } },
+                    { loader: 'sass-loader', options: { sourceMap: true } }
+                ]
             },
             {
                 test: /\.(ttf|eot|svg|woff2|woff)(\?v=[0-9]\.[0-9]\.[0-9])?$/,

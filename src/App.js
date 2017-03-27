@@ -1,7 +1,6 @@
 import kebabCase from 'lodash.kebabcase';
 
 export default class App {
-
   constructor(opts) {
 
     opts = opts || {};
@@ -21,7 +20,7 @@ export default class App {
     }
 
     this.slug = kebabCase(opts.slug);
-
+    this.category = opts.category;
     this.description = opts.description;
     this.icons = opts.icons;
     this.version = opts.version;
@@ -36,13 +35,3 @@ export default class App {
     return `/app/${this.slug}`;
   }
 }
-
-// export function withApp(Component) {
-
-//   // const app = app();
-
-//   const WithAppComponent = (props) => (<Component app={app} {...props} />);
-
-//   return WithAppComponent;
-// }
-
