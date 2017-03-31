@@ -6,6 +6,9 @@ import Notifications from './Notifications';
 import flashBannerReducers from './redux/reducers';
 import { showFlashBanner, hideFlashBanner } from './redux/actions';
 import FlashBanner from './components/FlashBanner/FlashBanner';
+import LoadingBar from 'react-redux-loading-bar';
+import { loadingBarReducer } from 'react-redux-loading-bar';
+import { showLoading, hideLoading } from 'react-redux-loading-bar';
 
 export {
   App,
@@ -14,7 +17,11 @@ export {
   withNotifications,
   Notifications,
   flashBannerReducers,
+  loadingBarReducer,
   showFlashBanner,
   hideFlashBanner,
   FlashBanner,
+  LoadingBar,
+  showLoading,
+  hideLoading,
 };
