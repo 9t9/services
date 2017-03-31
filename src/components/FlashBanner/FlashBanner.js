@@ -2,7 +2,6 @@
  * Created by saad bin saeed on 3/2/17.
  */
 import React, { PropTypes } from 'react';
-import Icon from 'react-fa';
 import './FlashBanner.css';
 import { hideFlashBanner } from '../../redux/actions/flashBanner';
 const propTypes = {
@@ -64,7 +63,7 @@ class FlashBanner extends React.Component {
         { bannerText } &nbsp;&nbsp;
         <button style={buttonStyle}>{ buttonText }</button>
         {
-          showClose ? <Icon name="times" className="close-icon" onClick={this.handleCloseButton} /> : null
+          showClose ? <span className="close-icon" onClick={this.handleCloseButton} >&#10006;</span>: null
         }
       </div>
     );
