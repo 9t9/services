@@ -1,5 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 
 const DEBUG = process.env.NODE_ENV !== 'production';
 
@@ -10,6 +12,7 @@ const config = {
   ],
   output: {
     path: path.join(__dirname, 'dist'),
+    libraryTarget: 'umd',
     filename: 'index.js'
   },
   resolve: {
@@ -18,7 +21,9 @@ const config = {
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': `'${process.env.NODE_ENV}'`
-    })
+    }),
+    new ExtractTextPlugin('style.css'),
+    new ProgressBarPlugin()
   ],
   module: {
     rules: [
@@ -26,6 +31,13 @@ const config = {
         test: /\.(js|jsx)$/,
         loader: 'babel-loader',
         exclude: /node_modules/
+      },
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: 'css-loader?sourceMap'
+        })
       }
     ]
   }
@@ -33,7 +45,7 @@ const config = {
 
 if (!DEBUG) {
   config.plugins = config.plugins.concat([
-    // new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } })
+    new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } })
   ]);
 }
 
