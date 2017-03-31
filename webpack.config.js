@@ -10,6 +10,8 @@ const config = {
   ],
   output: {
     path: path.join(__dirname, 'dist'),
+    libraryTarget: 'umd',
+    library: 'bluerain-client-services',
     filename: 'index.js'
   },
   resolve: {
@@ -26,6 +28,13 @@ const config = {
         test: /\.(js|jsx)$/,
         loader: 'babel-loader',
         exclude: /node_modules/
+      },
+      {
+        test: /\.css$/,
+        use: [
+          { loader: "style-loader" },
+          { loader: "css-loader" },
+        ],
       }
     ]
   }
