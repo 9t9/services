@@ -22,6 +22,7 @@ const config = {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': `'${process.env.NODE_ENV}'`
     }),
+    new ExtractTextPlugin('style.css'),
     new ProgressBarPlugin()
   ],
   module: {
@@ -33,7 +34,10 @@ const config = {
       },
       {
         test: /\.css$/,
-        loaders: ['style-loader', 'css-loader', 'sass-loader']
+        use: ExtractTextPlugin.extract({
+         fallback: 'style-loader',
+         use: 'css-loader?sourceMap'
+       })
       }
     ]
   }
