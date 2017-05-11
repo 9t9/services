@@ -101,6 +101,7 @@ const store = createStore(
 );
 ```
 
+
 Import the showLoading action from client Services and dispatch the action to your store
 ```
 import { showLoading, hideLoading } from 'bluerain-client-services';
@@ -108,4 +109,18 @@ import { showLoading, hideLoading } from 'bluerain-client-services';
 dispatch(showLoading())
 // do long running stuff
 dispatch(hideLoading());
+```
+Or you can simply map the loading bar actions to your component by
+```
+import { withLoadingBar } from 'bluerain-client-services';
+
+export default withLoadingBar(YourComponent);
+```
+then simply call
+```
+this.props.showLoading(); // To show loading bar
+```
+and
+```
+this.props.hideLoading(); // To hide loading bar
 ```
