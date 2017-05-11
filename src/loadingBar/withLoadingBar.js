@@ -21,7 +21,7 @@ function mapDispatchToProps(dispatch, ownProps) {
 
 export const withLoadingBar = (component) => {
   const bindedComponent = connect(
-    mapStateToProps,
+    null,
     mapDispatchToProps
   )(component);
   return bindedComponent;
