@@ -9,6 +9,7 @@ import FlashBanner from './components/FlashBanner/FlashBanner';
 import LoadingBar from 'react-redux-loading-bar';
 import { loadingBarReducer } from 'react-redux-loading-bar';
 import { showLoading, hideLoading } from 'react-redux-loading-bar';
+import { withLoadingBar } from './loadingBar/withLoadingBar';
 
 export {
   App,
@@ -24,4 +25,5 @@ export {
   LoadingBar,
   showLoading,
   hideLoading,
+  withLoadingBar,
 };
