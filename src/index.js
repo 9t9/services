@@ -10,6 +10,8 @@ import LoadingBar from 'react-redux-loading-bar';
 import { loadingBarReducer } from 'react-redux-loading-bar';
 import { showLoading, hideLoading } from 'react-redux-loading-bar';
 import { withLoadingBar } from './loadingBar/withLoadingBar';
+import { socketConnected, socketDisconnected } from './socket/actions';
+import { withSocket } from './socket/socket';
 
 export {
   App,
@@ -26,4 +28,7 @@ export {
   showLoading,
   hideLoading,
   withLoadingBar,
+  withSocket,
+  socketConnected,
+  socketDisconnected
 };
