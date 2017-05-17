@@ -124,3 +124,19 @@ and
 ```
 this.props.hideLoading(); // To hide loading bar
 ```
+---
+## How to check whether server is connected or not
+To check whether server is connected or not and sockets are active, import the withSocket function and wrap your component in it
+
+```
+import { withSocket } from 'bluerain-client-services';
+
+// Your component
+
+export default withSocket(Component);
+```
+you will get the prop isConnected in your component
+```
+isConnected : true // server connected
+isConnected: false // server not connected
+```
